@@ -21,7 +21,6 @@ const buildLines = [
   { text: "> Running HireAI AI models...", color: "text-muted-foreground" },
   { text: "> STATUS: OPTIMIZED ⚡", color: "text-syn-annotation" },
   { text: "> BUILD SUCCESSFUL in 3s", color: "text-syn-success font-semibold" },
-  { text: "> Thanks for visiting — let's build something amazing together! 🤝", color: "text-primary font-semibold" },
 ];
 
 const IDETerminal = ({ runTriggered }: IDETerminalProps) => {
