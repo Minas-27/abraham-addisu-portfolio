@@ -18,7 +18,7 @@ const ProjectBentoGrid = () => {
           <h2 className="text-4xl md:text-5xl font-bold">Project Spotlight</h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-5 gap-6 auto-rows-[200px]">
+        <div className="grid md:grid-cols-5 gap-6 auto-rows-auto md:auto-rows-[200px]">
           {/* HireAI - Large card */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
