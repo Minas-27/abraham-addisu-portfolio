@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { Smartphone, Wifi, Battery, Signal, ChevronLeft, Send, User, Briefcase, Code2, Mail, Layers } from "lucide-react";
+import { Smartphone, Wifi, Battery, Signal, ChevronLeft, Send, Briefcase, Code2, Mail, Layers } from "lucide-react";
 import { cn } from "@/lib/utils";
+import profileImg from "@/assets/profile.png";
 
 type Screen = "home" | "about" | "projects" | "experience" | "contact" | "project-detail" | "experience-detail";
 
@@ -232,9 +233,7 @@ const PhoneFrame = ({ children }: { children: React.ReactNode }) => (
 const HomeScreen = ({ onNavigate }: { onNavigate: (s: Screen) => void }) => (
   <div className="p-3 space-y-3">
     <div className="bg-card rounded-lg p-3 border border-border/50">
-      <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center mb-2">
-        <User className="w-4 h-4 text-primary" />
-      </div>
+      <img src={profileImg} alt="Abraham Addisu" className="w-10 h-10 rounded-full object-cover border-2 border-primary/30 mb-2" />
       <p className="text-[9px] font-bold text-foreground">Abraham Addisu</p>
       <p className="text-[7px] text-muted-foreground">Android Developer</p>
       <p className="text-[7px] text-syn-success mt-1">● Available for hire</p>
