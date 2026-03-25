@@ -4,12 +4,14 @@ import IDESidebar, { type FileId } from "@/components/ide/IDESidebar";
 import IDEEditor from "@/components/ide/IDEEditor";
 import IDETerminal from "@/components/ide/IDETerminal";
 import IDEStatusBar from "@/components/ide/IDEStatusBar";
+import AVDEmulator from "@/components/ide/AVDEmulator";
 
 const Index = () => {
   const [activeFile, setActiveFile] = useState<FileId>("AboutMe.kt");
   const [openFiles, setOpenFiles] = useState<FileId[]>(["AboutMe.kt"]);
   const [runCount, setRunCount] = useState(0);
   const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [emulatorOpen, setEmulatorOpen] = useState(true);
 
   const handleFileSelect = useCallback((file: FileId) => {
     setActiveFile(file);
@@ -45,6 +47,24 @@ const Index = () => {
 
         {sidebarOpen && <IDESidebar activeFile={activeFile} onFileSelect={handleFileSelect} />}
         <IDEEditor activeFile={activeFile} openFiles={openFiles} onTabClick={setActiveFile} onTabClose={handleTabClose} />
+
+        {/* AVD Emulator Panel */}
+        <div className="hidden lg:flex flex-col border-l border-border bg-ide-sidebar shrink-0">
+          <div className="flex items-center justify-between px-3 py-1.5 border-b border-border">
+            <span className="text-[10px] uppercase tracking-widest text-muted-foreground font-semibold">Running Devices</span>
+            <button
+              onClick={() => setEmulatorOpen(!emulatorOpen)}
+              className="text-[10px] text-muted-foreground hover:text-foreground transition-colors"
+            >
+              {emulatorOpen ? "−" : "+"}
+            </button>
+          </div>
+          {emulatorOpen && (
+            <div className="flex-1 overflow-y-auto ide-scrollbar p-3">
+              <AVDEmulator />
+            </div>
+          )}
+        </div>
       </div>
 
       <IDETerminal runTriggered={runCount} />
