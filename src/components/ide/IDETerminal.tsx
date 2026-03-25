@@ -34,13 +34,14 @@ const IDETerminal = ({ runTriggered }: IDETerminalProps) => {
     let i = 0;
     setAnimatingIdx(0);
     const interval = setInterval(() => {
-      setLines((prev) => [...prev, buildLines[i]]);
-      i++;
-      setAnimatingIdx(i);
       if (i >= buildLines.length) {
         clearInterval(interval);
         setAnimatingIdx(-1);
+        return;
       }
+      setLines((prev) => [...prev, buildLines[i]]);
+      i++;
+      setAnimatingIdx(i);
     }, 400);
     return () => clearInterval(interval);
   }, [runTriggered]);
