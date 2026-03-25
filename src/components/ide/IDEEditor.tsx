@@ -56,10 +56,10 @@ const ContactForm = () => {
           <C>{"// Online Presence"}</C>
         </div>
         <div className="hover:bg-secondary/40 transition-colors whitespace-nowrap pr-4">
-          <K>val</K> github = <S>"github.com/abrahamaddisu"</S>
+          <K>val</K> github = <S>"github.com/Minas-27"</S>
         </div>
         <div className="hover:bg-secondary/40 transition-colors whitespace-nowrap pr-4">
-          <K>val</K> linkedin = <S>"linkedin.com/in/abrahamaddisu"</S>
+          <K>val</K> linkedin = <S>"linkedin.com/in/abraham-addisu"</S>
         </div>
         <div className="hover:bg-secondary/40 transition-colors whitespace-nowrap pr-4" />
         <div className="hover:bg-secondary/40 transition-colors whitespace-nowrap pr-4">
