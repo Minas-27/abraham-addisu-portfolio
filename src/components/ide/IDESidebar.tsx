@@ -112,7 +112,7 @@ const TreeItem = ({
 
 const IDESidebar = ({ activeFile, onFileSelect }: IDESidebarProps) => {
   return (
-    <div className="w-52 lg:w-60 bg-ide-sidebar border-r border-border flex flex-col shrink-0 overflow-hidden">
+    <div className="w-56 sm:w-52 lg:w-60 h-full bg-ide-sidebar border-r border-border flex flex-col shrink-0 overflow-hidden">
       <div className="px-3 py-2 text-[10px] uppercase tracking-widest text-muted-foreground font-semibold border-b border-border">
         Project
       </div>

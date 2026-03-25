@@ -53,7 +53,7 @@ const IDETerminal = ({ runTriggered }: IDETerminalProps) => {
   }, [lines]);
 
   return (
-    <div className={cn("bg-ide-terminal border-t border-border flex flex-col shrink-0 transition-all", collapsed ? "h-8" : "h-36 lg:h-44")}>
+    <div className={cn("bg-ide-terminal border-t border-border flex flex-col shrink-0 transition-all", collapsed ? "h-8" : "h-28 sm:h-36 lg:h-44")}>
       <button
         onClick={() => setCollapsed(!collapsed)}
         className="h-8 px-3 flex items-center gap-2 text-[10px] uppercase tracking-widest text-muted-foreground font-semibold hover:bg-secondary/30 transition-colors shrink-0"
