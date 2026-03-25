@@ -31,6 +31,7 @@ const IDETerminal = ({ runTriggered }: IDETerminalProps) => {
 
   useEffect(() => {
     if (runTriggered === 0) return;
+    setLines([...initialLines]);
     let i = 0;
     setAnimatingIdx(0);
     const interval = setInterval(() => {
@@ -39,7 +40,8 @@ const IDETerminal = ({ runTriggered }: IDETerminalProps) => {
         setAnimatingIdx(-1);
         return;
       }
-      setLines((prev) => [...prev, buildLines[i]]);
+      const line = buildLines[i];
+      setLines((prev) => [...prev, line]);
       i++;
       setAnimatingIdx(i);
     }, 400);
