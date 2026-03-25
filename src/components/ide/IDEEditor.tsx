@@ -75,7 +75,7 @@ const ContactForm = () => {
             value={name}
             onChange={(e) => setName(e.target.value)}
             placeholder='"Your Name"'
-            className="bg-secondary/60 border border-border/60 rounded px-2 py-0.5 text-syn-string w-40 outline-none focus:border-primary/60 placeholder:text-muted-foreground/40"
+            className="bg-secondary/60 border border-border/60 rounded px-2 py-0.5 text-syn-string w-28 sm:w-40 outline-none focus:border-primary/60 placeholder:text-muted-foreground/40"
           />
         </div>
         <div className="hover:bg-secondary/40 transition-colors pr-4 flex items-center gap-2">
@@ -84,7 +84,7 @@ const ContactForm = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder='"your@email.com"'
-            className="bg-secondary/60 border border-border/60 rounded px-2 py-0.5 text-syn-string w-40 outline-none focus:border-primary/60 placeholder:text-muted-foreground/40"
+            className="bg-secondary/60 border border-border/60 rounded px-2 py-0.5 text-syn-string w-28 sm:w-40 outline-none focus:border-primary/60 placeholder:text-muted-foreground/40"
           />
         </div>
         <div className="hover:bg-secondary/40 transition-colors pr-4 flex items-center gap-2">
@@ -93,7 +93,7 @@ const ContactForm = () => {
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             placeholder='"Your message here..."'
-            className="bg-secondary/60 border border-border/60 rounded px-2 py-0.5 text-syn-string w-48 outline-none focus:border-primary/60 placeholder:text-muted-foreground/40"
+            className="bg-secondary/60 border border-border/60 rounded px-2 py-0.5 text-syn-string w-28 sm:w-48 outline-none focus:border-primary/60 placeholder:text-muted-foreground/40"
           />
         </div>
         <div className="hover:bg-secondary/40 transition-colors pr-4" />
@@ -342,13 +342,13 @@ const IDEEditor = ({ activeFile, openFiles, onTabClick, onTabClose }: IDEEditorP
             key={file}
             onClick={() => onTabClick(file)}
             className={cn(
-              "h-full flex items-center gap-1.5 px-3 text-xs border-r border-border shrink-0 transition-colors group",
+              "h-full flex items-center gap-1.5 px-2 sm:px-3 text-[11px] sm:text-xs border-r border-border shrink-0 transition-colors group",
               file === activeFile
                 ? "bg-ide-tab-active text-foreground border-t-2 border-t-primary"
                 : "bg-ide-tab-inactive text-muted-foreground hover:bg-secondary/40"
             )}
           >
-            <span className="truncate max-w-[120px]">{file}</span>
+            <span className="truncate max-w-[90px] sm:max-w-[120px]">{file}</span>
             <X
               className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity hover:text-destructive"
               onClick={(e) => {
@@ -361,7 +361,7 @@ const IDEEditor = ({ activeFile, openFiles, onTabClick, onTabClose }: IDEEditorP
       </div>
 
       {/* Editor content */}
-      <div className="flex-1 bg-ide-editor p-4 overflow-auto ide-scrollbar">
+      <div className="flex-1 bg-ide-editor p-2 sm:p-4 overflow-auto ide-scrollbar">
         <FileContent />
       </div>
     </div>
