@@ -21,6 +21,7 @@ const buildLines = [
   { text: "> Running HireAI AI models...", color: "text-muted-foreground" },
   { text: "> STATUS: OPTIMIZED ⚡", color: "text-syn-annotation" },
   { text: "> BUILD SUCCESSFUL in 3s", color: "text-syn-success font-semibold" },
+  { text: "> Thanks for visiting — let's build something amazing together! 🤝", color: "text-primary font-semibold" },
 ];
 
 const IDETerminal = ({ runTriggered }: IDETerminalProps) => {
@@ -34,13 +35,14 @@ const IDETerminal = ({ runTriggered }: IDETerminalProps) => {
     let i = 0;
     setAnimatingIdx(0);
     const interval = setInterval(() => {
-      setLines((prev) => [...prev, buildLines[i]]);
-      i++;
-      setAnimatingIdx(i);
       if (i >= buildLines.length) {
         clearInterval(interval);
         setAnimatingIdx(-1);
+        return;
       }
+      setLines((prev) => [...prev, buildLines[i]]);
+      i++;
+      setAnimatingIdx(i);
     }, 400);
     return () => clearInterval(interval);
   }, [runTriggered]);
