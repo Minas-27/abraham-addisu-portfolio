@@ -8,13 +8,10 @@ export default {
     container: {
       center: true,
       padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
+      screens: { "2xl": "1400px" },
     },
     extend: {
       fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
         mono: ["JetBrains Mono", "monospace"],
       },
       colors: {
@@ -51,21 +48,28 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        navy: {
-          deep: "hsl(var(--navy-deep))",
-          DEFAULT: "hsl(var(--navy))",
-          light: "hsl(var(--navy-light))",
+        ide: {
+          bg: "hsl(var(--ide-bg))",
+          editor: "hsl(var(--ide-editor))",
+          sidebar: "hsl(var(--ide-sidebar))",
+          toolbar: "hsl(var(--ide-toolbar))",
+          "tab-active": "hsl(var(--ide-tab-active))",
+          "tab-inactive": "hsl(var(--ide-tab-inactive))",
+          terminal: "hsl(var(--ide-terminal))",
+          statusbar: "hsl(var(--ide-statusbar))",
+          gutter: "hsl(var(--ide-gutter))",
         },
-        kotlin: {
-          DEFAULT: "hsl(var(--kotlin-purple))",
-          dim: "hsl(var(--kotlin-purple-dim))",
-        },
-        android: {
-          DEFAULT: "hsl(var(--android-green))",
-          dim: "hsl(var(--android-green-dim))",
-        },
-        surface: {
-          elevated: "hsl(var(--surface-elevated))",
+        syn: {
+          keyword: "hsl(var(--syn-keyword))",
+          string: "hsl(var(--syn-string))",
+          type: "hsl(var(--syn-type))",
+          number: "hsl(var(--syn-number))",
+          comment: "hsl(var(--syn-comment))",
+          annotation: "hsl(var(--syn-annotation))",
+          function: "hsl(var(--syn-function))",
+          property: "hsl(var(--syn-property))",
+          success: "hsl(var(--syn-success))",
+          error: "hsl(var(--syn-error))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
@@ -82,30 +86,6 @@ export default {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
-      },
-      keyframes: {
-        "accordion-down": {
-          from: { height: "0" },
-          to: { height: "var(--radix-accordion-content-height)" },
-        },
-        "accordion-up": {
-          from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: "0" },
-        },
-        "pulse-green": {
-          "0%, 100%": { opacity: "1" },
-          "50%": { opacity: "0.5" },
-        },
-        "cursor-blink": {
-          "0%, 100%": { opacity: "1" },
-          "50%": { opacity: "0" },
-        },
-      },
-      animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
-        "pulse-green": "pulse-green 2s ease-in-out infinite",
-        "cursor-blink": "cursor-blink 1s step-end infinite",
       },
     },
   },

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,58 +6,69 @@
 
 @layer base {
   :root {
-    /* Deep Navy base */
-    --background: 233 70% 8%;
-    --foreground: 220 20% 90%;
+    /* Android Studio Dark (Carbon) */
+    --background: 228 6% 13%;
+    --foreground: 220 13% 80%;
 
-    --card: 233 55% 12%;
-    --card-foreground: 220 20% 92%;
+    --card: 224 6% 18%;
+    --card-foreground: 220 13% 82%;
 
-    --popover: 233 55% 10%;
-    --popover-foreground: 220 20% 92%;
+    --popover: 224 6% 16%;
+    --popover-foreground: 220 13% 82%;
 
     /* Kotlin Purple */
     --primary: 258 100% 66%;
     --primary-foreground: 0 0% 100%;
 
-    /* Navy surface */
-    --secondary: 233 50% 16%;
-    --secondary-foreground: 220 20% 90%;
+    /* Editor surface */
+    --secondary: 224 6% 20%;
+    --secondary-foreground: 220 13% 80%;
 
-    --muted: 233 40% 18%;
-    --muted-foreground: 220 15% 55%;
+    --muted: 224 6% 22%;
+    --muted-foreground: 220 10% 50%;
 
-    /* Android Green */
-    --accent: 155 68% 55%;
-    --accent-foreground: 233 70% 8%;
+    /* Compose Blue */
+    --accent: 217 89% 61%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84% 60%;
+    --destructive: 0 100% 71%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 233 35% 20%;
-    --input: 233 35% 20%;
+    --border: 224 6% 24%;
+    --input: 224 6% 24%;
     --ring: 258 100% 66%;
-    --radius: 0.75rem;
+    --radius: 0.25rem;
 
-    /* Custom tokens */
-    --navy-deep: 233 70% 6%;
-    --navy: 233 70% 10%;
-    --navy-light: 233 50% 16%;
-    --kotlin-purple: 258 100% 66%;
-    --kotlin-purple-dim: 258 60% 40%;
-    --android-green: 155 68% 55%;
-    --android-green-dim: 155 50% 30%;
-    --surface-elevated: 233 45% 14%;
-    --glow-purple: 258 100% 66% / 0.15;
-    --glow-green: 155 68% 55% / 0.12;
+    /* IDE-specific tokens */
+    --ide-bg: 228 6% 13%;
+    --ide-editor: 224 6% 18%;
+    --ide-sidebar: 228 6% 15%;
+    --ide-toolbar: 228 6% 16%;
+    --ide-tab-active: 224 6% 18%;
+    --ide-tab-inactive: 228 6% 15%;
+    --ide-terminal: 228 8% 10%;
+    --ide-statusbar: 258 100% 66%;
+    --ide-gutter: 220 10% 40%;
 
-    --sidebar-background: 233 70% 8%;
-    --sidebar-foreground: 220 20% 90%;
+    /* Syntax colors */
+    --syn-keyword: 258 100% 66%;
+    --syn-string: 122 39% 49%;
+    --syn-type: 217 89% 61%;
+    --syn-number: 30 90% 60%;
+    --syn-comment: 220 10% 42%;
+    --syn-annotation: 35 100% 65%;
+    --syn-function: 45 100% 70%;
+    --syn-property: 220 13% 80%;
+    --syn-success: 122 39% 49%;
+    --syn-error: 0 100% 71%;
+
+    --sidebar-background: 228 6% 15%;
+    --sidebar-foreground: 220 13% 80%;
     --sidebar-primary: 258 100% 66%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 155 68% 55%;
-    --sidebar-accent-foreground: 233 70% 8%;
-    --sidebar-border: 233 35% 20%;
+    --sidebar-accent: 217 89% 61%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 224 6% 24%;
     --sidebar-ring: 258 100% 66%;
   }
 }
@@ -67,35 +78,39 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'JetBrains Mono', monospace;
+    overflow: hidden;
   }
 }
 
 @layer utilities {
-  .glow-purple {
-    box-shadow: 0 0 40px hsl(var(--glow-purple)), 0 0 80px hsl(var(--glow-purple));
+  .ide-scrollbar::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
   }
-  .glow-green {
-    box-shadow: 0 0 30px hsl(var(--glow-green)), 0 0 60px hsl(var(--glow-green));
+  .ide-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
   }
-  .gradient-purple-green {
-    background: linear-gradient(135deg, hsl(var(--kotlin-purple)), hsl(var(--android-green)));
+  .ide-scrollbar::-webkit-scrollbar-thumb {
+    background: hsl(var(--border));
+    border-radius: 4px;
   }
-  .gradient-navy {
-    background: linear-gradient(180deg, hsl(var(--navy-deep)), hsl(var(--navy)));
+  .ide-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground));
   }
-  .text-gradient {
-    background: linear-gradient(135deg, hsl(var(--kotlin-purple)), hsl(var(--android-green)));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-  .border-glow {
-    border: 1px solid hsl(var(--kotlin-purple) / 0.3);
-  }
-  .surface-glass {
-    background: hsl(var(--surface-elevated) / 0.6);
-    backdrop-filter: blur(20px);
-    border: 1px solid hsl(var(--border) / 0.5);
-  }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+.cursor-blink {
+  animation: blink 1s step-end infinite;
 }
