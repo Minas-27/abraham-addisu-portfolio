@@ -49,7 +49,7 @@ const Index = () => {
         <IDEEditor activeFile={activeFile} openFiles={openFiles} onTabClick={setActiveFile} onTabClose={handleTabClose} />
 
         {/* AVD Emulator Panel */}
-        <div className="hidden lg:flex flex-col border-l border-border bg-ide-sidebar shrink-0">
+        <div className="hidden md:flex flex-col border-l border-border bg-ide-sidebar shrink-0">
           <div className="flex items-center justify-between px-3 py-1.5 border-b border-border">
             <span className="text-[10px] uppercase tracking-widest text-muted-foreground font-semibold">Running Devices</span>
             <button

@@ -243,7 +243,8 @@ const ContactScreen = () => {
       <div className="bg-card rounded-lg p-2 border border-border/30 space-y-1">
         <p className="text-[7px] text-foreground">📧 abrahamaddisu217@gmail.com</p>
         <p className="text-[7px] text-foreground">📱 +251-963048258</p>
-        <p className="text-[7px] text-foreground">📍 Addis Ababa, Ethiopia</p>
+        <p className="text-[7px] text-foreground">🔗 github.com/Minas-27</p>
+        <p className="text-[7px] text-foreground">🔗 linkedin.com/in/abraham-addisu</p>
       </div>
     </div>
   );
