@@ -6,7 +6,7 @@
   <img src="https://img.shields.io/badge/Framer_Motion-12-FF0055?style=for-the-badge&logo=framer&logoColor=white" alt="Framer Motion" />
 </p>
 
-<h1 align="center">🚀 Abraham Addisu — Developer Portfolio</h1>
+<h1 align="center">⚡ Abraham Addisu — Developer Portfolio</h1>
 
 <p align="center">
   <strong>A creative Android Studio–themed portfolio built with React & TypeScript</strong>
@@ -27,7 +27,7 @@
 
 ## 🌐 Live Demo
 
-> **[View Portfolio →](https://id-preview--a9460ea2-268c-45ad-aef8-67058410b0a0.lovable.app)**
+> **[View Portfolio →](https://id-preview--a9460ea2-268c-45ad-aef8-67058410b0a0.lovable.app)**  <!-- Update with your custom domain -->
 
 ---
 
@@ -65,7 +65,7 @@
 
 ---
 
-## 🚀 Getting Started
+## ⚙️ Getting Started
 
 ### Prerequisites
 
@@ -76,8 +76,8 @@
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/YOUR_REPO.git
-cd YOUR_REPO
+git clone https://github.com/Minas-27/Abraham-Addisu-Portfolio.git
+cd Abraham-Addisu-Portfolio
 
 # Install dependencies
 npm install
