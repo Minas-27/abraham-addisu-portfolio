@@ -232,8 +232,8 @@ const PhoneFrame = ({ children }: { children: React.ReactNode }) => (
 /* ── Screens ── */
 const HomeScreen = ({ onNavigate }: { onNavigate: (s: Screen) => void }) => (
   <div className="p-3 space-y-3">
-    <div className="bg-card rounded-lg p-3 border border-border/50">
-      <img src={profileImg} alt="Abraham Addisu" className="w-10 h-10 rounded-full object-cover border-2 border-primary/30 mb-2" />
+    <div className="bg-card rounded-lg p-3 border border-border/50 flex flex-col items-center">
+      <img src={profileImg} alt="Abraham Addisu" className="w-12 h-12 rounded-full object-cover object-top border-2 border-primary/30 mb-2" />
       <p className="text-[9px] font-bold text-foreground">Abraham Addisu</p>
       <p className="text-[7px] text-muted-foreground">Android Developer</p>
       <p className="text-[7px] text-syn-success mt-1">● Available for hire</p>
